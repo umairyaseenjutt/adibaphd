@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Adiba Yaseen, Ph.D. - Academic Curriculum Vitae</title>
+<style>
+  @page {
+    size: A4;
+    margin: 12mm 14mm;
+    background-color: #FFFFFF;
+    @bottom-right {
+      content: "Page " counter(page) " of " counter(pages);
+      font-size: 8pt;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #64748B;
+    }
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    color: #1E293B;
+    background-color: #FFFFFF;
+    line-height: 1.42;
+    font-size: 9.3pt;
+  }
+
+  /* Header Styles */
+  .header-container {
+    width: 100%;
+    border-bottom: 2px solid #0F2942;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+
+  .candidate-name {
+    font-size: 20pt;
+    font-weight: 800;
+    color: #0F2942;
+    letter-spacing: -0.3px;
+    margin: 0 0 2px 0;
+    text-transform: uppercase;
+  }
+
+  .candidate-target {
+    font-size: 11pt;
+    font-weight: 700;
+    color: #1E40AF;
+    margin: 0 0 5px 0;
+    letter-spacing: 0.2px;
+  }
+
+  .contact-meta {
+    font-size: 8.5pt;
+    color: #475569;
+    margin-bottom: 5px;
+  }
+
+  .contact-item {
+    display: inline-block;
+    margin-right: 12px;
+  }
+
+  .contact-item strong {
+    color: #0F2942;
+  }
+
+  .badge-container {
+    margin-top: 4px;
+  }
+
+  .status-badge {
+    display: inline-block;
+    background-color: #F8FAFC;
+    color: #0F2942;
+    border: 1px solid #CBD5E1;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 7.8pt;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+
+  .status-badge-green {
+    background-color: #F0FDF4;
+    color: #166534;
+    border: 1px solid #BBF7D0;
+    margin-left: 6px;
+  }
+
+  /* Section Styles */
+  .section {
+    margin-bottom: 11px;
+  }
+
+  .section-title {
+    font-size: 10.2pt;
+    font-weight: 800;
+    color: #0F2942;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    border-bottom: 1.5px solid #E2E8F0;
+    padding-bottom: 2.5px;
+    margin-top: 0;
+    margin-bottom: 6px;
+    page-break-after: avoid;
+  }
+
+  .section-title span {
+    border-bottom: 2px solid #1E40AF;
+    padding-bottom: 2.5px;
+  }
+
+  .profile-text {
+    font-size: 9.1pt;
+    color: #334155;
+    text-align: justify;
+    margin: 0;
+    line-height: 1.42;
+  }
+
+  /* Item Cards */
+  .item-card {
+    margin-bottom: 8px;
+    page-break-inside: avoid;
+  }
+
+  .item-header-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1px;
+  }
+
+  .item-title {
+    font-size: 9.3pt;
+    font-weight: 700;
+    color: #0F2942;
+    text-align: left;
+  }
+
+  .item-date {
+    font-size: 8.4pt;
+    font-weight: 600;
+    color: #64748B;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .item-subtitle {
+    font-size: 8.7pt;
+    font-weight: 600;
+    color: #1E40AF;
+    margin-bottom: 3px;
+  }
+
+  .item-desc {
+    font-size: 8.8pt;
+    color: #334155;
+    margin-top: 1px;
+  }
+
+  ul.bullet-list {
+    margin: 2px 0 0 0;
+    padding-left: 15px;
+  }
+
+  ul.bullet-list li {
+    font-size: 8.9pt;
+    color: #334155;
+    margin-bottom: 2.5px;
+    line-height: 1.36;
+  }
+
+  /* Publications */
+  .pub-item {
+    font-size: 8.7pt;
+    color: #334155;
+    margin-bottom: 6px;
+    line-height: 1.36;
+    page-break-inside: avoid;
+    padding-left: 14px;
+    text-indent: -14px;
+  }
+
+  .pub-item strong {
+    color: #0F2942;
+  }
+
+  .pub-tag {
+    display: inline-block;
+    font-size: 7.2pt;
+    font-weight: 700;
+    padding: 1px 4px;
+    border-radius: 3px;
+    background-color: #EFF6FF;
+    color: #1E40AF;
+    border: 1px solid #BFDBFE;
+    text-indent: 0;
+    margin-left: 3px;
+    vertical-align: baseline;
+  }
+
+  .pub-tag-green {
+    background-color: #ECFDF5;
+    color: #047857;
+    border: 1px solid #A7F3D0;
+  }
+
+  /* Skills & Matrix */
+  .matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 3px;
+  }
+
+  .matrix-table td {
+    vertical-align: top;
+    padding: 2.5px 4px;
+    font-size: 8.8pt;
+  }
+
+  .matrix-label {
+    font-weight: 700;
+    color: #0F2942;
+    width: 26%;
+    white-space: nowrap;
+  }
+
+  .matrix-val {
+    color: #334155;
+    width: 74%;
+  }
+
+  /* Two Column References */
+  .ref-table {
+    width: 100%;
+    border-collapse: collapse;
+    page-break-inside: avoid;
+  }
+
+  .ref-table td {
+    vertical-align: top;
+    width: 50%;
+    padding: 3px 6px;
+  }
+
+  .ref-name {
+    font-size: 9pt;
+    font-weight: 700;
+    color: #0F2942;
+  }
+
+  .ref-role {
+    font-size: 8.4pt;
+    color: #1E40AF;
+    font-weight: 600;
+  }
+
+  .ref-inst {
+    font-size: 8.4pt;
+    color: #334155;
+  }
+
+  .ref-email {
+    font-size: 8.4pt;
+    color: #475569;
+  }
+
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header-container">
+    <h1 class="candidate-name">Adiba Yaseen, Ph.D.</h1>
+    <div class="candidate-target">Assistant Professor / Senior Lecturer &bull; Computer Science &amp; Artificial Intelligence</div>
+    <div class="contact-meta">
+      <span class="contact-item"><strong>Location:</strong> Riyadh, Saudi Arabia</span>
+      <span class="contact-item"><strong>Phone:</strong> +966 58 138 1104</span>
+      <span class="contact-item"><strong>Email:</strong> adibayaseen@gmail.com</span>
+      <span class="contact-item"><strong>Google Scholar:</strong> adibayaseen</span>
+    </div>
+    <div class="badge-container">
+      <span class="status-badge">Transferable Iqama</span>
+      <span class="status-badge status-badge-green">&#10003; Available Immediately for Higher Education Institutions in KSA</span>
+    </div>
+  </div>
+
+  <!-- ACADEMIC PROFILE -->
+  <div class="section">
+    <div class="section-title"><span>Academic Profile</span></div>
+    <p class="profile-text">
+      Ph.D. Computer Scientist and Faculty Member (PIEAS, top 1% of class) with 6+ years of rigorous university-level teaching and multidisciplinary research experience in Artificial Intelligence, Machine Learning, and Bioinformatics. Proven academic publishing track record in high-impact international Q1/Q2 journals (<em>Bioinformatics</em>, <em>BioData Mining</em>). Demonstrated expertise in outcome-based education (OBE), ABET-aligned computing course delivery, final-year design project supervision, and laboratory development. Seeking an Assistant Professor or Lecturer faculty appointment in Saudi Arabia to deliver research-led undergraduate and graduate instruction, mentor students, and contribute to institutional research output aligned with Vision 2030 educational goals.
+    </p>
+  </div>
+
+  <!-- AREAS OF EXPERTISE & TEACHING COMPETENCIES -->
+  <div class="section">
+    <div class="section-title"><span>Areas of Expertise &amp; Teaching Competencies</span></div>
+    <table class="matrix-table">
+      <tr>
+        <td class="matrix-label">&bull; Core Teaching Domains:</td>
+        <td class="matrix-val">Artificial Intelligence, Machine Learning, Deep Learning, Database Management Systems, Object-Oriented Programming (C++/Python), Operating Systems &amp; Networks, Data Structures &amp; Algorithms</td>
+      </tr>
+      <tr>
+        <td class="matrix-label">&bull; Research Interests:</td>
+        <td class="matrix-val">Bioinformatics, Computational Biomolecular Design, Graph Convolutional Networks (GCN), Medical Image Processing, Pattern Classification, High-Dimensional Computational Interactomics</td>
+      </tr>
+      <tr>
+        <td class="matrix-label">&bull; Technical &amp; Scientific Tools:</td>
+        <td class="matrix-val">Python, C++, C#, C, SQL, Oracle PL/SQL, MATLAB, TensorFlow, GPU/CUDA Computing, PyMOL, MPI, Pthreads, Assembly (NASM)</td>
+      </tr>
+      <tr>
+        <td class="matrix-label">&bull; Academic Methodologies:</td>
+        <td class="matrix-val">Outcome-Based Education (OBE), Course Learning Outcomes (CLOs) Mapping, Capstone Project Mentorship, Laboratory Manual Design</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <div class="section-title"><span>Higher Education &amp; Academic Qualifications</span></div>
+
+    <div class="item-card">
+      <table class="item-header-table">
+        <tr>
+          <td class="item-title">Ph.D. in Computer Science</td>
+          <td class="item-date">Jun 2018 &ndash; Mar 2025</td>
+        </tr>
+      </table>
+      <div class="item-subtitle">Pakistan Institute of Engineering and Applied Sciences (PIEAS)</div>
+      <div class="item-desc">
+        &bull; <strong>Area of Research:</strong> Biomedical Machine Learning &amp; Biomolecular Design<br>
+        &bull; <strong>Academic Standing:</strong> CGPA 3.92 / 4.0 (Ranked in Top 1% of Class) &bull; Ranked #1 Engineering University in Pakistan (HEC)
+      </div>
+    </div>
+
+    <div class="item-card">
+      <table class="item-header-table">
+        <tr>
+          <td class="item-title">M.S. in Computer Science</td>
+          <td class="item-date">Mar 2016 &ndash; Oct 2017</td>
+        </tr>
+      </table>
+      <div class="item-subtitle">Pakistan Institute of Engineering and Applied Sciences (PIEAS)</div>
+      <div class="item-desc">
+        &bull; <strong>Area of Research:</strong> Bioinformatics and Machine Learning<br>
+        &bull; <strong>Academic Standing:</strong> CGPA 3.62 / 4.0 (Ranked in Top 2% of Class)
+      </div>
+    </div>
+
+    <div class="item-card">
+      <table class="item-header-table">
+        <tr>
+          <td class="item-title">B.S. in Computer Engineering</td>
+          <td class="item-date">Oct 2011 &ndash; Oct 2015</td>
+        </tr>
+      </table>
+      <div class="item-subtitle">University of Engineering &amp; Technology (UET), Lahore</div>
+      <div class="item-desc">
+        &bull; <strong>Area of Concentration:</strong> Image Processing &amp; Computer Vision<br>
+        &bull; <strong>Academic Standing:</strong> CGPA 3.357 / 4.0 (Ranked in Top 10% of Class)
+      </div>
+    </div>
+  </div>
+
+  <!-- UNIVERSITY TEACHING EXPERIENCE -->
+  <div class="section">
+    <div class="section-title"><span>University Teaching &amp; Faculty Experience</span></div>
+
+    <div class="item-card">
+      <table class="item-header-table">
+        <tr>
+          <td class="item-title">Lecturer &bull; Department of Computer Science &amp; IT</td>
+          <td class="item-date">Nov 2020 &ndash; Jul 2024</td>
+        </tr>
+      </table>
+      <div class="item-subtitle">The University of Lahore</div>
+      <ul class="bullet-list">
+        <li>Delivered lectures and conducted laboratory sessions for undergraduate courses: <em>Artificial Intelligence</em>, <em>Machine Learning</em>, <em>Database Management Systems</em>, <em>Operating Systems &amp; Networks</em>, and <em>Introduction to IT</em>.</li>
+        <li>Formulated course syllabi, assessment rubrics, midterm/final examinations, and practical coding assignments aligned with Outcome-Based Education (OBE) frameworks.</li>
+        <li>Supervised and evaluated undergraduate final-year design projects in applied AI, deep learning, and full-stack software development.</li>
+        <li>Maintained continuous academic advising and mentorship hours for over 200 undergraduate students per semester.</li>
+      </ul>
+    </div>
+
+    <div class="item-card">
+      <table class="item-header-table">
+        <tr>
+          <td class="item-title">Lecturer &bull; Department of Computer Science &amp; IT</td>
+          <td class="item-date">Sep 2017 &ndash; Jun 2018</td>
+        </tr>
+      </table>
+      <div class="item-subtitle">The University of Lahore</div>
+      <ul class="bullet-list">
+        <li>Instructed core computer programming curriculum: <em>Programming Fundamentals I (C++)</em> and <em>Object-Oriented Programming (C++)</em>.</li>
+        <li>Designed interactive lab sessions, coding challenge sets, and semester-long software implementation projects.</li>
+      </ul>
+    </div>
+
+    <div class="item-card">
+      <table class="item-header-table">
+        <tr>
+          <td class="item-title">Lecturer &bull; Department of Computer Science</td>
+          <td class="item-date">Oct 2015 &ndash; Feb 2016</td>
+        </tr>
+      </table>
+      <div class="item-subtitle">Govt. Degree College for Women</div>
+      <ul class="bullet-list">
+        <li>Taught foundational computing principles, algorithmic logic, and computer science fundamentals for higher-secondary cohorts.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PEER-REVIEWED PUBLICATIONS -->
+  <div class="section">
+    <div class="section-title"><span>Peer-Reviewed Journal &amp; Conference Publications</span></div>
+
+    <div class="pub-item">
+      1. <strong>Yaseen, A.</strong>, Amin, I., Akhtar, N., Ben-Hur, A., &amp; Minhas, F. (2022). &ldquo;Insights into performance evaluation of compound&ndash;protein interaction prediction methods.&rdquo; <em>Bioinformatics</em> (Oxford Academic), 38(Supplement_2), ii75&ndash;ii81. <span class="pub-tag">Impact Factor: 6.93</span> <span class="pub-tag pub-tag-green">Q1 Journal</span>
+    </div>
+
+    <div class="pub-item">
+      2. Abbasi, W., <strong>Yaseen, A.</strong>, Ul Hassan, F., Andleeb, S., &amp; Minhas, F. (2020). &ldquo;SLAND: in-silico protein binding affinity prediction using sequence information.&rdquo; <em>BioData Mining</em> (Springer Nature), 13(20). <span class="pub-tag">Impact Factor: 4.00</span> <span class="pub-tag pub-tag-green">Q2 Journal</span>
+    </div>
+
+    <div class="pub-item">
+      3. <strong>Yaseen, A.</strong>, Gull, S., Akhtar, N., Amin, I., &amp; Minhas, F. (2021). &ldquo;HemoNet: Predicting hemolytic activity of peptides with integrated feature learning.&rdquo; <em>Journal of Bioinformatics and Computational Biology</em>, 19(05). <span class="pub-tag">Impact Factor: 2.40</span> <span class="pub-tag">Q3 Journal</span>
+    </div>
+
+    <div class="pub-item">
+      4. <strong>Yaseen, A.</strong>, Abbasi, W., &amp; Minhas, F. (2018). &ldquo;Protein binding affinity prediction using support vector regression with interfacial features.&rdquo; <em>15th International Bhurban Conference on Applied Sciences and Technology (IBCAST)</em>, IEEE.
+    </div>
+
+    <div class="pub-item">
+      5. <strong>Yaseen, A.</strong>, Amin, I., Akhtar, N., Chattopadhyay, S., Ben-Hur, A., &amp; Minhas, F. &ldquo;Protein-Specific Protein&ndash;Protein Interaction Inhibitors using Graph Convolutional Neural Embedding.&rdquo; <em>Submitted, Cell Systems</em> (Cell Press). <span class="pub-tag">Impact Factor: 11.09</span> <span class="pub-tag pub-tag-green">Q1 Journal</span>
+    </div>
+  </div>
+
+  <!-- RESEARCH GRANTS & FELLOWSHIPS -->
+  <div class="section">
+    <div class="section-title"><span>Research Grants, Honors &amp; Fellowships</span></div>
+    <ul class="bullet-list">
+      <li><strong>National Research Program for Universities (NRPU) Grant:</strong> Competitive research funding awarded by the Higher Education Commission (HEC) for Ph.D. research in Computer Science (2018 &ndash; 2022).</li>
+      <li><strong>PIEAS IT-Endowment Fellowship:</strong> Merit-based fellowship awarded by the Higher Education Commission for M.S. Computer Science (2015 &ndash; 2017).</li>
+      <li><strong>Pakistan Engineering Congress (PEC) Merit Scholarship:</strong> Fully funded 4-year undergraduate scholarship for B.S. Computer Engineering (2011 &ndash; 2015).</li>
+    </ul>
+  </div>
+
+  <!-- PRESENTATIONS & SCHOLARLY ACTIVITIES -->
+  <div class="section">
+    <div class="section-title"><span>Scholarly Presentations &amp; Professional Service</span></div>
+    <ul class="bullet-list">
+      <li><strong>Speaker / Paper Presenter:</strong> 15th International Bhurban Conference on Applied Sciences and Technology (IBCAST).</li>
+      <li><strong>Research Presenter:</strong> International Symposium on Advances in Computer and Information Science (ISACIS'17), PIEAS Islamabad.</li>
+      <li><strong>Resource Person:</strong> Workshop on Deep Learning Foundations and Applications, Department of Computer &amp; Information Sciences, PIEAS.</li>
+      <li><strong>Professional Memberships:</strong> Active Member, Association for Computing Machinery (ACM); Computer Science Society.</li>
+    </ul>
+  </div>
+
+  <!-- ACADEMIC REFERENCES -->
+  <div class="section">
+    <div class="section-title"><span>Academic References</span></div>
+    <table class="ref-table">
+      <tr>
+        <td>
+          <div class="ref-name">Dr. Fayyaz-ul-Amir Afsar Minhas</div>
+          <div class="ref-role">Associate Professor (Ph.D. Advisor)</div>
+          <div class="ref-inst">Department of Computer Science, University of Warwick, UK</div>
+          <div class="ref-email">Email: fayyaz.minhas@warwick.ac.uk</div>
+        </td>
+        <td>
+          <div class="ref-name">Dr. Muhammad Usman Ghani Khan</div>
+          <div class="ref-role">Associate Professor</div>
+          <div class="ref-inst">Al-Khawarizmi Institute of Computer Science, UET Lahore</div>
+          <div class="ref-email">Email: usman.ghani@uet.edu.pk</div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</body>
+</html>
